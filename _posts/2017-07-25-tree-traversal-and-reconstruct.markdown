@@ -78,7 +78,7 @@ private int height(BinaryNode<AnyType> t) {
              4 7      5    6 8        前序遍历序列
              4 7      5    8 6        中序遍历序列
 ```
-3.
+3. ...
 ```
                      1
                    /   \
@@ -89,7 +89,7 @@ private int height(BinaryNode<AnyType> t) {
                  7        8           前序遍历序列
                  7        8           中序遍历序列
 ```
-4.
+4. ...
 ```
                      1
                    /   \
