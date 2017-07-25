@@ -27,21 +27,21 @@ private int height(BinaryNode<AnyType> t) {
 }
 ```
 
-> 注： 从上面的描述可以看出，所谓的前序、中序和后序是按照**处理当前节点的位置**来划分的
+> 注： 从上面的描述可以看出，所谓的前序、中序和后序是按照**处理当前节点的位置**来划分的
 
 **例：**
 ```
-       a
-     /   \
-    b     c
-   / \   / \
-  d   e f   g
- /
-h
+                   a
+                 /   \
+                b     c
+               / \   / \
+              d   e f   g
+             /
+            h
 ```
 前序遍历结果：a b d h e c f g
 
-中序遍历结果：h d b e a f c g
+中序遍历结果：h d b e a f c g
 
 后序遍历结果：h d e b f g c a
 
@@ -61,46 +61,46 @@ h
 
 **例：** 根据前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}构造二叉树；
 
-1. 由前序序列知树的根节点为1，左子树的前序遍历序列为{2,4,7}，中序遍历序列为{4,7,2}；右子树的前序遍历序列和中序遍历序列分别为{3,5,6,8}、{5,3,8,6}:
+1. 由前序序列知树的根节点为1，左子树的前序遍历序列为{2,4,7}，中序遍历序列为{4,7,2}；右子树的前序遍历序列和中序遍历序列分别为{3,5,6,8}、{5,3,8,6}:
 ```
-                  1
-                /   \
-              /       \
+                    1
+                  /   \
+                /       \
 前序遍历序列 2 4 7    3 5 6 8
 中序遍历序列 4 7 2    5 3 8 6
 ```
-2. 对于左子树，从前序遍历序列{2,4,7}知，根节点为2，从中序遍历序列知其左子树的前序遍历序列和中序遍历中序遍历序列分别为{4,7}、{};相应的右子树的根节点为3，其左子树的前序遍历序列和中序遍历中序遍历序列分别为{5}、{8,6}:
+2. 对于左子树，从前序遍历序列{2,4,7}知，根节点为2，从中序遍历序列知其左子树的前序遍历序列和中序遍历中序遍历序列分别为{4,7}、{};相应的右子树的根节点为3，其左子树的前序遍历序列和中序遍历中序遍历序列分别为{5}、{8,6}:
 ```
-                   1
-                 /   \
-               2       3
-             /   \    /  \
+                     1
+                   /   \
+                 2       3
+               /   \    /  \
 前序遍历序列 4 7       5   6 8
 中序遍历序列 4 7       5   8 6
 ```
 3.
 ```
-                   1
-                 /   \
-               2       3
-              / \     /  \
-             4       5    6
-            / \     / \  / \
-前序遍历序列     7         8
-中序遍历序列     7         8
+                     1
+                   /   \
+                 2       3
+                / \    /   \
+               4      5     6
+              / \    / \   / \
+前序遍历序列     7        8
+中序遍历序列     7        8
 ```
 4.
 ```
                    1
                  /   \
                2       3
-              /       /  \
-             4       5    6
+              /      /   \
+             4      5     6
               \          /
-               7         8
+               7        8
 ```
 
-Java代码实现：
+Java代码实现：
 ```java
 /**
  * Definition for binary tree
@@ -119,16 +119,16 @@ TreeNode reConstructBinaryTree(int[] pre,int[] in) {
     }
 
     TreeNode treeNode = new TreeNode(pre[0]);
-    
+
     int m = find(in, pre[0]);
-    
+
     treeNode.left = reConstructBinaryTree(subArray(pre, 1,  m + 1), subArray(in, 0, m));
-    
+
     treeNode.right = reConstructBinaryTree(subArray(pre, m + 1, pre.length), subArray(in, m + 1, in.length));
-    
+
     return treeNode;
 }
-    
+
 private int find(int[] array, int t) {
     int i = 0;
     for(;i < array.length; i++) {
@@ -137,14 +137,14 @@ private int find(int[] array, int t) {
     }
     return i;
 }
-    
+
 private int[] subArray(int[] array, int start, int end) {
     int[] a = new int[end - start];
-        
+
     for(int i = start; i < end; i++) {
         a[i-start] = array[i];
     }
-    
+
     return a;
 }
 ```
