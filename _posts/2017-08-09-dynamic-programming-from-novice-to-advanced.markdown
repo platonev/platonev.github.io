@@ -178,6 +178,7 @@ Here are a few TC problems for practicing:
 - [StripePainter](http://community.topcoder.com/tc?module=ProblemDetail&rd=4555&pm=1215) – SRM 150 Div 1
 - [QuickSums](http://community.topcoder.com/tc?module=ProblemDetail&rd=5072&pm=2829) – SRM 197 Div 2
 - [ShortPalindromes](http://community.topcoder.com/tc?module=ProblemDetail&rd=4630&pm=1861) – SRM 165 Div 2
+
 ## Advanced
 The following problems will need some good observations in order to reduce them to a dynamic solution.
 
