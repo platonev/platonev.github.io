@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "［转］Dynamic Programming – From Novice to Advanced"
+title: "[转] Dynamic Programming – From Novice to Advanced"
 date: 2017-08-09 12:52:00 +0800
 categories: algorithm dynamic-programming
 ---
